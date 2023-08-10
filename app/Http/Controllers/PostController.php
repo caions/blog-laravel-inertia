@@ -14,6 +14,12 @@ class PostController extends Controller
      */
     public function index(): View
     {
+        $posts = Post::all();
+        dump($posts);
+        foreach (Post::all() as $post) {
+            echo $post->title;
+        }
+
         return view('posts.index');
     }
 
@@ -36,9 +42,10 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show($slug)
     {
-        //
+        $post = Post::where('slug', $slug)->firstOrFail();
+        return view('posts.show', compact('post'));
     }
 
     /**
