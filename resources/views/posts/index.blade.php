@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('content')
 <div class="h-auto p-3">
     <div class="text-2xl">Posts</div>
     @forelse ($posts as $post)
@@ -9,3 +10,4 @@
     <p>No posts</p>
     @endforelse
 </div>
+@endsection
