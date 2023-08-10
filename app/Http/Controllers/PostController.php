@@ -15,12 +15,7 @@ class PostController extends Controller
     public function index(): View
     {
         $posts = Post::all();
-        dump($posts);
-        foreach (Post::all() as $post) {
-            echo $post->title;
-        }
-
-        return view('posts.index');
+        return view('posts.index', compact('posts'));
     }
 
     /**
