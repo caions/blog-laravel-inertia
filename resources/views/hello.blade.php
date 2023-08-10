@@ -1,3 +1,9 @@
-<h1>
-  Olá que legal {{ $nome }}
-</h1>
+<!-- resources/views/home.blade.php -->
+
+@extends('layouts.app')
+
+@section('content')
+    <div class="container text-red-700">
+        ola
+    </div>
+@endsection
