@@ -6,6 +6,7 @@ use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
 {
@@ -21,9 +22,9 @@ class PostController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -31,8 +32,17 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        Post::create([
+            'title' => $validated['title'],
+            'content' => $validated['content'],
+            'slug' => $validated['slug']
+        ]);
+
+        return Redirect::route('posts.index');
     }
+    
 
     /**
      * Display the specified resource.
