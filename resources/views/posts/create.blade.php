@@ -39,10 +39,14 @@
       <div class="text-red-600">{{ $message }}</div>
       @enderror
     </div>
-    <div class="flex items-center justify-between">
+    <div class="flex items-center gap-4 justify-end">
+      <a href="{{route('posts.index')}}"
+        class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">
+        Cancelar
+      </a>
       <button type="submit"
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">
-        Publicar
+        Postar
       </button>
     </div>
   </form>
