@@ -47,7 +47,7 @@ class StorePostRequest extends FormRequest
     {
         return [
                 'title' => 'required|max:50',
-                'content' => 'required',
+                'body' => 'required',
                 'slug' => 'required|unique:posts|max:50'
         ];
     }

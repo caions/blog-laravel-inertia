@@ -49,7 +49,7 @@ class UpdatePostRequest extends FormRequest
         $postId = $this->route('post');
         return [
                 'title' => 'required|max:50',
-                'content' => 'required',
+                'body' => 'required',
                 'slug' => [
                     'required',
                     'max:50',

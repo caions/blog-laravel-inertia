@@ -36,7 +36,7 @@ class PostController extends Controller
 
         Post::create([
             'title' => $validated['title'],
-            'content' => $validated['content'],
+            'body' => $validated['body'],
             'slug' => $validated['slug']
         ]);
 
@@ -70,7 +70,7 @@ class PostController extends Controller
         $validated = $request->validated();
         
         $post->title = $validated['title'];
-        $post->content = $validated['content'];
+        $post->body = $validated['body'];
         $post->slug = $validated['slug'];
         $post->save();
         

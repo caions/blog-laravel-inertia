@@ -20,7 +20,7 @@ class PostFactory extends Factory
         $title = $this->faker->unique()->realText(20, 2);
         return [
             'title' => $title,
-            'content' => fake()->realText(255, 2),
+            'body' => fake()->realText(10000, 2),
             'slug' => Str::slug($title),
         ];
     }

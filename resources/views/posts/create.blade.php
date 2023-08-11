@@ -16,16 +16,16 @@
       @enderror
     </div>
     <div class="mb-6">
-      <label class="block text-sm font-bold mb-2" for="content">
-        Content
+      <label class="block text-sm font-bold mb-2" for="body">
+        body
       </label>
-      <textarea name="content" class="shadow peer block min-h-[auto] w-full rounded bg-transparent px-3 
+      <textarea name="body" class="shadow peer block min-h-[auto] w-full rounded bg-transparent px-3 
       py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 
       ease-linear focus:placeholder:opacity-100 border
       data-[te-input-state-active]:placeholder:opacity-100 
-      motion-reduce:transition-none @error('content') border-red-500 @enderror" id="content" rows="3"
-        placeholder="Content"></textarea>
-      @error('content')
+      motion-reduce:transition-none @error('body') border-red-500 @enderror" id="body" rows="3"
+        placeholder="body"></textarea>
+      @error('body')
       <div class="text-red-600">{{ $message }}</div>
       @enderror
     </div>
