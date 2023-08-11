@@ -56,17 +56,25 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit($slug): View
     {
-        //
+        $post = Post::where('slug', $slug)->firstOrFail();
+        return view('posts.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(UpdatePostRequest $request, Post $post)
-    {
-        //
+    {        
+        $validated = $request->validated();
+        
+        $post->title = $validated['title'];
+        $post->content = $validated['content'];
+        $post->slug = $validated['slug'];
+        $post->save();
+        
+        return redirect()->route('posts.index');
     }
 
     /**
