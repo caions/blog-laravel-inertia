@@ -9,12 +9,20 @@
     @forelse ($posts as $post)
     <div class="flex flex-col mt-4">
         <div>
-            <a href={{ route('posts.show', ['post' => $post->slug]) }}>{{ $post->title }}</a>
-            <a class="text-green-600" href={{ route('posts.edit', ['post' => $post->slug]) }}>Editar</a>
+            {{ $post->title }}
+            <div class="flex gap-2">
+                <a class="text-blue-600" href={{ route('posts.show', ['post' => $post->slug]) }}>Visualizar</a>
+                <a class="text-green-600" href={{ route('posts.edit', ['post' => $post->slug]) }}>Editar</a>
+                <form method="POST" action="{{ route('posts.destroy', ['post' => $post]) }}">
+                @csrf
+                @method('DELETE')
+                    <button class="text-red-600">Excluir</button>
+                </form>
+            </div>
         </div>
     </div>
     @empty
-    <p>No posts</p>
+    <p class="mt-5">No posts</p>
     @endforelse
 </div>
 @endsection

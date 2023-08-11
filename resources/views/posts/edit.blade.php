@@ -42,14 +42,9 @@
     </div>
     <div class="flex items-center justify-between">
       <button type="submit"
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">
-        Publicar
+        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ">
+        Salvar
       </button>
-      <form method="POST" action="{{ route('posts.destroy', ['post' => $post]) }}">
-        @csrf
-        @method('DELETE')
-            <button class="text-red-600">Excluir</button>
-        </form>
     </div>
   </form>
 </div>
