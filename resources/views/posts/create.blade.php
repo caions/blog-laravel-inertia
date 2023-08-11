@@ -50,12 +50,5 @@
       </button>
     </div>
   </form>
-  <script>
-    ClassicEditor
-        .create( document.querySelector( '#body' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-  </script>
 </div>
 @endsection
